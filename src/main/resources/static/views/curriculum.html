@@ -1,0 +1,15 @@
+<html lang="en" ng-app="app" class="no-js" ng-cloak>
+<body ng-controller="curriculumController" ng-cloak>
+<div class="section">
+    <!-- <h3>{{headingTitle}}</h3> -->
+
+    <form class="form" name="myForm">
+               <input id="file" type="file" file-model="myFile" placeholder="Choose file" ng-click="change()"/>
+               <button id="upload" class="button" ng-click="uploadFile()">Upload</button>
+    </form>
+    <div class="curriculum-section top-buffer ">
+        <img class="photo" src="../images/curriculum.jpg"/>
+    </div>
+</div>
+</body>
+</html>
