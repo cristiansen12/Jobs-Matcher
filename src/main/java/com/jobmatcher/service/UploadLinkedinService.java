@@ -7,7 +7,8 @@ import org.springframework.web.multipart.MultipartFile;
  */
 public interface UploadLinkedinService {
 
-    String PATH = "C:\\Users\\gevlad\\Documents\\Stuff\\Facultate\\Jobs-Matcher\\uploadLinkedin";
+//  String PATH = "C:\\Users\\gevlad\\Documents\\Stuff\\Facultate\\Jobs-Matcher\\uploadLinkedin";
+ 	String PATH = "/home/rush/workspace/Jobs-Matcher/uploadLinkedin";
 
     String save(MultipartFile file);
 }

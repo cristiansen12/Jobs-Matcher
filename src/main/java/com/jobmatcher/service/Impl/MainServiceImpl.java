@@ -142,9 +142,9 @@ public class MainServiceImpl implements MainService {
 
             for (int i=0; i< jobs.size();i++){
                 if (jobs.get(i).getId().equals(maxEntry.getKey())){
-                    result += "\nCompany: " + jobs.get(i).getCompany();
-                    result += "\nTitle of Job: " + jobs.get(i).getTitle();
-                    result += "\nDescription: " + jobs.get(i).getDescription();
+                    result += "{ \"company\": \"" + jobs.get(i).getCompany() + "\" , \""
+                    + "titleOfJob\": \"" + jobs.get(i).getTitle() + "\" , \""
+                    + "dscription\": \"" + jobs.get(i).getDescription() + "\"}";
 
                 }
             }
