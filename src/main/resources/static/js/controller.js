@@ -28,9 +28,6 @@ app.controller('linkedinController', ['$scope','$log', '$http', '$location', '$r
                 .error(function (data) {
                     $log.log(data);
                     $scope.result = data;
-                    /* nu inteleg din ce motiv intra pe functia de eroare
-                        oricum da eroare si la logare de formatare incorecta JSON
-                        in consola pune rezultatul corect*/
                     $scope.test = "Result set is ready";
                 });
         }
@@ -56,13 +53,12 @@ app.controller('curriculumController', ['$scope','$log', '$http', '$location', '
             })
                 .success(function (data) {
                     $log.log(data);
-                    $scope.result = data;
+                    $scope.result1 = data;
                     $scope.test = "Result set is ready";
                 })
                 .error(function (data) {
                     $log.log(data);
-                    $scope.result = data;
-                    /* nu inteleg din ce motiv intra pe functia de eroare...*/
+                    $scope.result1 = data;
                     $scope.test = "Result set is ready";
                 });
         }

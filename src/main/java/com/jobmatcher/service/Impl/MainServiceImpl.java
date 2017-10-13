@@ -37,8 +37,7 @@ public class MainServiceImpl implements MainService {
     @Autowired
     UploadLinkedinService uploadLinkedinService;
 
-    int longestCommonSubsequence(String[] profileCV, String[] jobDescription, int cvLength, int jobLength )
-    {
+    private int longestCommonSubsequence(String[] profileCV, String[] jobDescription, int cvLength, int jobLength ) {
         int L[][] = new int[cvLength+1][jobLength+1];
 
         for (int i=0; i<=cvLength; i++)
@@ -57,14 +56,14 @@ public class MainServiceImpl implements MainService {
     }
 
     /* Utility function to get max of 2 integers */
-    int max(int a, int b)
+    private int max(int a, int b)
     {
         return (a > b)? a : b;
     }
 
     public String getJobFromAuthenticJobs(String key) {
 
-        String url = "https://authenticjobs.com/api/?api_key=d3bc95973199abbd28fd6b587e09645d&method=aj.jobs.search&keywords=devops&format=json&perpage=20";
+        String url = "https://authenticjobs.com/api/?api_key=d3bc95973199abbd28fd6b587e09645d&method=aj.jobs.search&keywords=backend,frontend&format=json&perpage=20";
         String result = "";
         URL obj = null;
         StringBuffer response = new StringBuffer();
@@ -132,10 +131,8 @@ public class MainServiceImpl implements MainService {
 
             Map.Entry<String, Integer> maxEntry = null;
 
-            for (Map.Entry<String, Integer> entry : similarityMap.entrySet())
-            {
-                if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0)
-                {
+            for (Map.Entry<String, Integer> entry : similarityMap.entrySet()) {
+                if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0) {
                     maxEntry = entry;
                 }
             }
@@ -163,7 +160,7 @@ public class MainServiceImpl implements MainService {
         return result;
     }
 
-    public String getKeyWordsFromCVFile(String filePath){
+    public String getKeyWordsFromCVFile(String filePath) {
 
         String[] keyWords = new String[MAX_LENGTH];
 
@@ -179,7 +176,7 @@ public class MainServiceImpl implements MainService {
         return key;
     }
 
-    public String getKeyWordsFromLinkedinFile(String filePath){
+    public String getKeyWordsFromLinkedinFile(String filePath) {
 
         String[] keyWords = new String[MAX_LENGTH];
 

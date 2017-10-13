@@ -26,7 +26,7 @@ public class UploadLinkedinServiceImpl implements UploadLinkedinService {
             try {
                 Files.copy(file.getInputStream(), Paths.get(PATH, file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
 
-                return PATH + "/" + file.getOriginalFilename();
+                return PATH + "\\" + file.getOriginalFilename();
             } catch (IOException e) {
                 System.out.println(e.getStackTrace());
             }
