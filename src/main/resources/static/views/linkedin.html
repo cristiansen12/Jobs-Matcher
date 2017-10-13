@@ -1,15 +1,25 @@
 <html lang="en" ng-app="app" class="no-js" ng-cloak>
 <body ng-controller="linkedinController" ng-cloak>
-<div class="section">
-    <!-- <h3>{{headingTitle}}</h3> -->
+<div class="col-md-6 col-lg-6">
+    <h3 class="text-center">{{headingTitle}}</h3>
 
-    <form class="form" name="myForm">
-        <input id="file" type="file" file-model="myFile" placeholder="Choose file" ng-click="change()"/>
-        <button id="upload" class="button" ng-click="uploadFile()">Upload</button>
+    <form class="form top-buffer text-center" name="myForm">
+         <div class="btn-group">
+         	<label class="btn btn-primary"> Browse
+         		<input id="file" type="file" file-model="myFile"  style="display: none;" ng-click="change()"/>
+         	</label>
+        	<button id="upload" class="btn btn-default" ng-click="uploadFile()">Upload</button>
+        </div>
     </form>
-    <div class="linkedin-section top-buffer">
+    <div class="linkedin-section top-buffer text-center">
         <img class="photo" src="../images/linkedin.jpg"/>
     </div>
+</div>
+<div class="col-md-6 col-lg-6 right-small-inner-buffer">
+
+    {{result.company}}
+    {{result.titleOfJob}}
+    {{result.dscription}}
 </div>
 </body>
 </html>
